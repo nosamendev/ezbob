@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { compTexts } from './store/actions/index';
+
+import Component1 from './Component1';
+import Component2 from './Component2';
+import Component3 from './Component3';
 import './App.css';
 
-function App() {
+const App = (props) => {
+
+  useState(() => {
+    props.compTexts();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="wrapper">
+      <Component1 />
+      <Component2 />
+      <Component3 />
     </div>
   );
 }
 
-export default App;
+export default connect(null, {compTexts})(App);
