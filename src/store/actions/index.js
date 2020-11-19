@@ -1,10 +1,4 @@
-import { COMP_TEXTS, CHANGE_TEXT1, CHANGE_TEXT2, CHANGE_TEXT3 } from '../actions/types';
-
-export const compTexts = () => {
-    return {
-      type: COMP_TEXTS
-    };
-  };
+import { CHANGE_TEXT1, CHANGE_TEXT2, CHANGE_TEXT3 } from '../actions/types'
 
   export const changeText1 = (str) => {
       return {

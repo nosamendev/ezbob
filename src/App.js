@@ -1,7 +1,5 @@
 
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { compTexts } from './store/actions/index';
 
 import Component1 from './Component1';
 import Component2 from './Component2';
@@ -10,17 +8,13 @@ import './App.css';
 
 const App = (props) => {
 
-  useState(() => {
-    props.compTexts();
-  }, []);
-
   return (
     <div id="wrapper">
-      <Component1 />
-      <Component2 />
-      <Component3 />
+      <Component1 text="Component1" />
+      <Component2 text="Component2" />
+      <Component3 text="Component3" />
     </div>
   );
 }
 
-export default connect(null, {compTexts})(App);
+export default App;

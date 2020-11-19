@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import {changeText1, changeText2, changeText3}  from './store/actions';
 
 const Component2 = (props) => {
+
+    useEffect(() => {
+        props.changeText2(props.text);
+      }, []);
 
     const handleComponentClick = () => {
         props.changeText1('Hello');
